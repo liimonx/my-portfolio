@@ -1,0 +1,12 @@
+@include font-face($font-name-maax, maax-light, $font-weight-light);
+
+@include font-face($font-name-maax, maax-regular, $font-weight-normal);
+@include font-face($font-name-maax, maax-italic, $font-weight-normal, italic);
+
+@include font-face($font-name-maax, maax-medium, $font-weight-medium);
+@include font-face($font-name-maax, maax-medium-italic, $font-weight-medium, italic);
+
+@include font-face($font-name-maax, maax-bold, $font-weight-bold);
+@include font-face($font-name-maax, maax-bold-italic, $font-weight-bold, italic);
+
+@include font-face($font-name-maax, maax-black, $font-weight-bolder);

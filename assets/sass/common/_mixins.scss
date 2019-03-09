@@ -1,0 +1,126 @@
+@mixin font-face($name, $filename, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $name;
+    src: url('#{$assets-fonts-path}/#{$filename}/#{$filename}.eot');
+    src: url('#{$assets-fonts-path}/#{$filename}/#{$filename}.eot?#iefix') format('embedded-opentype'),
+    url('#{$assets-fonts-path}/#{$filename}/#{$filename}.woff2') format('woff2'),
+    url('#{$assets-fonts-path}/#{$filename}/#{$filename}.woff') format('woff'),
+    url('#{$assets-fonts-path}/#{$filename}/#{$filename}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@mixin position-static() {
+  position: static !important;
+}
+
+@mixin position-relative() {
+  position: relative !important;
+}
+
+@mixin position-absolute() {
+  position: absolute !important;
+}
+
+@mixin pin-l {
+  left: 0;
+}
+
+@mixin pin-r {
+  right: 0;
+}
+
+@mixin pin-t {
+  top: 0;
+}
+
+@mixin pin-b {
+  bottom: 0;
+}
+
+@mixin pl($size, $important: true) {
+  padding-left: spacing-to-value($size);
+}
+
+@mixin pr($size, $important: true) {
+  padding-right: spacing-to-value($size);
+}
+
+@mixin px($size, $important: true) {
+  @include pl($size, $important);
+  @include pr($size, $important);
+}
+
+
+@mixin pt($size, $important: true) {
+  padding-top: spacing-to-value($size);
+}
+
+@mixin pb($size, $important: true) {
+  padding-bottom: spacing-to-value($size);
+}
+
+@mixin py($size, $important: true) {
+  @include pt($size, $important);
+  @include pb($size, $important);
+}
+
+@mixin mx($size, $important: true) {
+  margin-left: spacing-to-value($size);
+  margin-right: spacing-to-value($size);
+}
+
+@mixin mt($size, $important: true) {
+  margin-top: spacing-to-value($size);
+}
+
+@mixin mb($size, $important: true) {
+  margin-bottom: spacing-to-value($size);
+}
+
+@mixin my($size, $important: true) {
+  @include mt($size, $important);
+  @include mb($size, $important);
+}
+
+@mixin font-smoothing-antialiased($or: antialiased) {
+  -webkit-font-smoothing: $or;
+}
+
+
+@mixin  svgColor($nc, $ch, $trans: 0) {
+  fill: $nc;
+  transition: fill 0.1s  +  $trans;
+
+
+  &:hover,
+  &:active {
+    fill: $ch;
+  }
+}
+
+// Prevent unexpected font increasing on Mobile
+@mixin zero-font-size() {
+  font-size: 0;
+  text-size-adjust: 100%;
+}
+
+@mixin hover-active {
+  &:hover,
+  &:active {
+    @content;
+  }
+}
+
+@mixin object-fit($mode, $position: center) {
+  object-fit: $mode;
+  object-position: $position;
+  font-family: 'object-fit: #{$mode}; object-position: #{$position};'; // object fit polyfill config
+}
+
+@mixin img-fluid() {
+  max-width: 100%;
+  height: auto;
+}

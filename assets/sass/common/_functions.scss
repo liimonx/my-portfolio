@@ -1,0 +1,15 @@
+@function strip-units($number, $add-unit: 0) {
+  @return $number / ($number * 0 + 1)+$add-unit;
+}
+
+@function px-to-em($size, $font-size: $font-size-base-desired) {
+  @return strip-units($size / ($font-size - 1px + 1px), em); 
+}
+
+@function spacing-to-value($size, $important: !important) {
+  $important-prop: if($important, ' !important', '');
+
+  $value: map_get($spacers, $size)#{$important-prop};
+
+  @return $value
+}

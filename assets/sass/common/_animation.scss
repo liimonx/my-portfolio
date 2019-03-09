@@ -1,0 +1,114 @@
+$cubic-bezier : 0.165,
+0.84,
+0.44;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.85) translateX(30px);
+  }
+}
+
+
+@keyframes slideFormTop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFormBottom {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes levitation {
+  0% {
+    transform: translateY(-20px)
+  }
+
+  100% {
+    transform: translateY(0px)
+  }
+}
+
+@mixin levitation($duration: 1s) {
+  animation-duration: 0s + $duration;
+  animation-name: levitation;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier($cubic-bezier, $duration);
+}
+
+@mixin fadeIn($duration: 1s) {
+  animation-duration: 0s + $duration;
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier($cubic-bezier, $duration);
+}
+
+@mixin fadeInLeft($duration: 1s) {
+  animation-duration: 0s + $duration;
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+}
+
+@mixin fadeOutRight($duration: 1) {
+  animation-duration: 0s + $duration;
+  animation-name: fadeOutRight;
+  animation-fill-mode: both;
+}
+
+
+@mixin slideInUp($duration: 1) {
+  animation-duration: 0s + $duration;
+  animation-name: slideFormTop;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier($cubic-bezier, $duration);
+
+}
+
+@mixin slideInDown($duration: 1) {
+  animation-duration: 0s + $duration;
+  animation-name: slideFormBottom;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, $duration);
+}
