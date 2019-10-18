@@ -1,72 +1,28 @@
-/** Import Bootstrap functions */
+//colors
 
-@import "~bootstrap/scss/functions";
-$theme-colors: (
-  'primary': #3e3e3e,
-  'gray-text': #868686,
-  'pinkish-grey': #bebebe,
-  'pinkish-grey-two': #cccccc,
-  'greyish': #a7a7a7,
-  'blue-light': #8491f6,
-  'gray-light': #f4f4f4,
-  'gray': #e9e9e9,
-  'transparent-gray': rgba(255, 255, 255, 0.45),
-  'dark': #2c2c2c,
-  'btn-gray': #aaaaaa,
-  'high-dark': #222222,
-  'warm-grey-two': #707070,
-  'white': #ffffff,
-  'black': #000000,
-  'transparent-overlay': transparentize(rgb(0,0,0), 0.9),
-);
-/** Bootstrap navbar fix (https://git.io/fADqW) */
 
-$navbar-dark-toggler-icon-bg: none;
-$navbar-light-toggler-icon-bg: none;
 // Global fonts
 $assets-fonts-path: unquote("../fonts");
-$font-name-maax: maax;
-$font-family-base: $font-name-maax, Helvetica, sans-serif;
-$font-size-base: 1rem; // ~16px
-$font-size-base-desired: 16px;
-$small-font-size: 0.74rem; // ~11px
-$line-height-base: 1.5;
-$h1-font-size: 3.125rem; // ~50px
-$h2-font-size: 2.2rem; // ~32px
-$h3-font-size: 1.5625rem; // ~25px
-$h4-font-size: 1.3125rem; // ~21px
-$h5-font-size: 0.9375rem; // ~15px
-$h6-font-size: 0.8125rem; // ~13px
+$font-name-maax:    maax;
+$font-family-base:  $font-name-maax, Helvetica, sans-serif;
 
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-$font-weight-bolder: 900;
+$font-size-base:            1rem; // ~16px
+$font-size-base-desired:    16px;
+$small-font-size:           0.74rem; // ~11px
+$line-height-base:          1.5;
+$h1-font-size:              3.125rem; // ~50px
+$h2-font-size:              2.2rem; // ~32px
+$h3-font-size:              1.5625rem; // ~25px
+$h4-font-size:              1.3125rem; // ~21px
+$h5-font-size:              0.9375rem; // ~15px
+$h6-font-size:              0.8125rem; // ~13px
 
-$headings-font-weight: $font-weight-bolder;
-$headings-color: theme-color('primary');
-$social-icon-size-default: 24px;
+$font-weight-light:     300;
+$font-weight-normal:    400;
+$font-weight-medium:    500;
+$font-weight-semibold:  600;
+$font-weight-bold:      700;
+$font-weight-bolder:    900;
 
-$grid-gutter-width: 24px;
-$container-max-widths: (
-  // /   sm: 540px,
-  // md: 720px,
-  // lg: 960px,
-  xl: 1140px + $grid-gutter-width,
-);
-
-$cover-height: 680px;
-
-// post height - width *--px--*
-$content-m-height: 575;
-$wide-content-height: 444;
-$xs-content-height: 98;
-$small-content-height: 270;
-$large-content-height: 595;
-$large-content-width: map_get($container-max-widths, xl) - $grid-gutter-width;
-
-//** Modal backdrop opacity
-$modal-backdrop-bg: #000 !default;
-$modal-backdrop-opacity: 0.91 !default;
+//grid
+$enable-grid-classes: false;

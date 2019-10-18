@@ -3,12 +3,10 @@
 @import "common/functions";
 @import "common/fonts";
 @import "common/animation";
-/** Import everything from autoload */
 
-//noinspection CssUnknownTarget
+/** Import everything from autoload */
 @import "./autoload/bootstrap";
 
 /** Import theme styles */
-
 @import "common/global";
 
